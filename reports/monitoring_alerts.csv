@@ -1,0 +1,10 @@
+month,check,status,detail
+9,Score PSI,Amber,PSI 0.131
+9,Feature drift,Amber,EXT_SOURCE_MEAN CSI 0.167
+10,Score PSI,Red,PSI 0.255
+10,Feature drift,Red,EXT_SOURCE_3 CSI 1.579
+10,Data quality,Red,EXT_SOURCE_3 missing rate up 58pp
+11,Score PSI,Red,PSI 0.340
+11,Feature drift,Red,EXT_SOURCE_MEAN CSI 0.438
+12,Score PSI,Red,PSI 0.442
+12,Feature drift,Red,EXT_SOURCE_MEAN CSI 0.574

@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# data: download from Kaggle / regenerate with `python run_all.py --sample`
+data/raw/*
+data/sample/*
+!data/raw/.gitkeep
+!data/sample/.gitkeep
+
+# rebuilt by the pipeline
+artifacts/*.joblib
+logs/
+
+# keep reports/, reports/figures/ and powerbi/data/ committed so reviewers can see results
+
+# local working files
+run_real.log
+TEST_layout.pbix
+*_backup_*.pbix
+.env

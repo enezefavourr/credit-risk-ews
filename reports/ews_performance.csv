@@ -1,0 +1,8 @@
+,value
+train_snapshot,-25..-13 (pooled)
+test_snapshot,-7
+horizon_months,6
+n_test,172770
+test_bad_rate,0.0011923366325172194
+Gini_out_of_time,0.5765036830010783
+KS_out_of_time,0.5461243814873918

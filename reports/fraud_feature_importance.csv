@@ -1,0 +1,15 @@
+,importance
+orig_balance_error,0.46281382
+amount_to_balance,0.21910815
+drains_account,0.13178036
+dest_zero_balances,0.0817898
+orig_balance_log,0.049815487
+amount_log,0.019461544
+dest_balance_error,0.009040152
+dest_prior_amount_log,0.005860303
+dest_prior_senders,0.0049961926
+is_transfer,0.004725112
+hour,0.0045800493
+dest_prior_txns,0.004203217
+night,0.0018258243
+orig_received_before,0.0

@@ -1,0 +1,7 @@
+,value
+alerts_per_day,228.44444444444446
+precision,1.0
+recall,0.8721719457013575
+fraud_amount_caught_share,0.9814373381608553
+xgb_threshold,0.9999842643737793
+alert_budget_per_day,321.0

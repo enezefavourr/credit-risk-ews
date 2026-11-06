@@ -1,0 +1,160 @@
+{
+  "model_version": "pd_app_v1.0",
+  "trained_at": "2026-11-05T18:34:09+00:00",
+  "data_dir": "C:\\Users\\oyere\\Downloads\\creditdata\\credit-risk-ews\\..",
+  "n_train": 184506,
+  "train_default_rate": 0.08072908198107379,
+  "champion": "Scorecard (LR)",
+  "challenger": "XGBoost",
+  "scorecard_features": [
+    "EXT_SOURCE_MEAN",
+    "EXT_SOURCE_3",
+    "EXT_SOURCE_1",
+    "YEARS_EMPLOYED",
+    "BUR_DEBT_RATIO",
+    "OCCUPATION_TYPE",
+    "INST_DPD_MAX_12M",
+    "CREDIT_TO_GOODS",
+    "INST_LATE_SHARE",
+    "INST_LATE_SHARE_12M",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "YEARS_PHONE_CHANGE",
+    "CREDIT_TERM_MONTHS",
+    "YEARS_ID_PUBLISH",
+    "REGION_RATING_CLIENT",
+    "BUR_ACTIVE_COUNT",
+    "BUR_OVERDUE_ANY",
+    "NAME_FAMILY_STATUS"
+  ],
+  "all_features": [
+    "NAME_CONTRACT_TYPE",
+    "FLAG_OWN_CAR",
+    "FLAG_OWN_REALTY",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "OCCUPATION_TYPE",
+    "REGION_RATING_CLIENT",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "AGE_YEARS",
+    "EMPLOYED_ANOMALY",
+    "YEARS_EMPLOYED",
+    "CREDIT_TO_INCOME",
+    "ANNUITY_TO_INCOME",
+    "CREDIT_TO_GOODS",
+    "CREDIT_TERM_MONTHS",
+    "EXT_SOURCE_MEAN",
+    "EXT_SOURCE_MISSING_CNT",
+    "YEARS_ID_PUBLISH",
+    "YEARS_PHONE_CHANGE",
+    "INST_COUNT",
+    "INST_PREV_LOANS",
+    "INST_DPD_MEAN",
+    "INST_DPD_MAX",
+    "INST_LATE_SHARE",
+    "INST_LATE30_SHARE",
+    "INST_PAY_RATIO_MEAN",
+    "INST_UNDERPAID_SHARE",
+    "INST_LATE_SHARE_12M",
+    "INST_DPD_MAX_12M",
+    "POS_MONTHS",
+    "POS_DPD_MAX",
+    "POS_DPD_MONTH_SHARE",
+    "POS_DPD_MAX_12M",
+    "BUR_COUNT",
+    "BUR_ACTIVE_COUNT",
+    "BUR_OVERDUE_ANY",
+    "BUR_OVERDUE_AMT",
+    "BUR_DEBT_RATIO",
+    "NEW_TO_LENDER",
+    "BUR_DEBT_TO_INCOME"
+  ],
+  "excluded_features": [
+    "CODE_GENDER (protected attribute)"
+  ],
+  "validation": {
+    "Scorecard (LR)": {
+      "AUC": 0.7453,
+      "Gini": 0.4906,
+      "KS": 0.3722,
+      "Brier": 0.0688,
+      "mean_PD": 0.0808,
+      "actual_DR": 0.0807,
+      "HL_pvalue": 0.338
+    },
+    "Random Forest": {
+      "AUC": 0.7583,
+      "Gini": 0.5165,
+      "KS": 0.3905,
+      "Brier": 0.0681,
+      "mean_PD": 0.0813,
+      "actual_DR": 0.0807,
+      "HL_pvalue": 0.0
+    },
+    "XGBoost": {
+      "AUC": 0.7755,
+      "Gini": 0.551,
+      "KS": 0.4108,
+      "Brier": 0.0665,
+      "mean_PD": 0.0812,
+      "actual_DR": 0.0807,
+      "HL_pvalue": 0.7149
+    }
+  },
+  "recommended_cutoff": 540,
+  "lgd_assumption": 0.45,
+  "grades": [
+    {
+      "pd_upper": 0.02,
+      "grade": "A",
+      "decision": "Approve",
+      "pricing_tier": "Prime",
+      "limit_x_monthly_income": 3.0
+    },
+    {
+      "pd_upper": 0.04,
+      "grade": "B",
+      "decision": "Approve",
+      "pricing_tier": "Standard",
+      "limit_x_monthly_income": 2.5
+    },
+    {
+      "pd_upper": 0.08,
+      "grade": "C",
+      "decision": "Approve",
+      "pricing_tier": "Standard +",
+      "limit_x_monthly_income": 1.5
+    },
+    {
+      "pd_upper": 0.15,
+      "grade": "D",
+      "decision": "Refer",
+      "pricing_tier": "High risk",
+      "limit_x_monthly_income": 1.0
+    },
+    {
+      "pd_upper": 1.01,
+      "grade": "E",
+      "decision": "Decline",
+      "pricing_tier": "-",
+      "limit_x_monthly_income": 0.0
+    }
+  ],
+  "retraining_triggers": {
+    "score_psi": 0.25,
+    "gini_drop_abs": 0.05,
+    "calibration_ratio_outside": [
+      0.8,
+      1.25
+    ]
+  }
+}
